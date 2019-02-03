@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<br />
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Login</legend>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div class="form-group">
+            <label for="pass">Password:</label>
+            <input type="text" class="form-control" id="pass" name="pass">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        <h5 class="text-warning">@ViewBag.Mensaje</h5>
+    </fieldset>
+}
