@@ -11,12 +11,11 @@ namespace TestUnitario.Tests.Controllers
     public class UsuariosControllerTest
     {
         [TestMethod]
-        public void Testing_View_And_Model()
+        public void Testing_Model()
         {
             UsuariosController controller = new UsuariosController();
             var result = controller.ModeloUsuarios() as ViewResult;
             var mordelo = result.Model;
-            Assert.IsNotNull(result);
             Assert.IsNotNull(mordelo);
         }
         [TestMethod]
@@ -41,7 +40,7 @@ namespace TestUnitario.Tests.Controllers
         {
             UsuariosController controller = new UsuariosController();
             RedirectToRouteResult result = controller.Login(nombre:"Javier", pass:"1234") as RedirectToRouteResult;
-            Assert.AreEqual("ModeloUsuarios", result.RouteValues["action"]);
+            Assert.AreEqual("Login", result.RouteValues["action"]);
             Assert.AreEqual("Usuarios", result.RouteValues["controller"]);
         }
     }
